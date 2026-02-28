@@ -159,7 +159,7 @@ cd claude-memory-3layer
 │       │                                                      │
 │  压缩前 ──→ pre_compact.py ──→ 保存会话状态                  │
 │       │                                                      │
-│  会话结束 ──→ （状态持久化到下次会话）                        │
+│  （状态通过 PreCompact 自动持久化到下次会话）                 │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -416,7 +416,7 @@ claude-memory-3layer/
 
 | 指标 | 数值 |
 |------|------|
-| **Hook脚本** | 4个（SessionStart、PostToolUse、PreCompact、State） |
+| **Hook脚本** | 3个（SessionStart、PostToolUse、PreCompact）+ 1个工具模块（session_state） |
 | **记忆层级** | 3层（知识图谱 + 每日笔记 + 隐性知识） |
 | **命令** | 2个（`/memory-review`、`/memory-status`） |
 | **依赖** | 0（纯Python标准库） |
@@ -477,7 +477,7 @@ claude-memory-3layer/
 ### v1.0.0 (2026-02-27) — 首次发布
 
 - 三层记忆架构（知识图谱 + 每日笔记 + 隐性知识）
-- 4个生命周期钩子（SessionStart、PostToolUse、PreCompact、State）
+- 3个生命周期钩子（SessionStart、PostToolUse、PreCompact）+ 1个工具模块（session_state）
 - 一行命令安装（macOS/Linux/Windows）
 - `/memory-review` 和 `/memory-status` 命令
 - 与官方自动记忆（v2.1.59+）互补设计

@@ -22,7 +22,7 @@ The Three-Layer Memory System is built on two core mechanisms:
 │       │                                                      │
 │  PreCompact ──→ pre_compact.py ──→ Save session state        │
 │       │                                                      │
-│  SessionEnd ──→ (state persisted for next session)           │
+│  (State auto-persisted via PreCompact for next session)      │
 └──────────────────────────────────────────────────────────────┘
 ```
 

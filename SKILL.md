@@ -84,5 +84,6 @@ cd claude-memory-3layer && ./install.sh
 │           └── <topic>/
 │               └── items.json
 └── commands/
-    └── memory-review.md      # /memory-review command
+    ├── memory-review.md      # /memory-review command
+    └── memory-status.md      # /memory-status command
 ```

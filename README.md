@@ -159,7 +159,7 @@ your-project/
 │       │                                                      │
 │  PreCompact ──→ pre_compact.py ──→ Save session state        │
 │       │                                                      │
-│  SessionEnd ──→ (state persisted for next session)           │
+│  (State auto-persisted via PreCompact for next session)      │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -418,7 +418,7 @@ claude-memory-3layer/
 
 | Metric | Value |
 |--------|-------|
-| **Hook Scripts** | 4 (SessionStart, PostToolUse, PreCompact, State) |
+| **Hook Scripts** | 3 (SessionStart, PostToolUse, PreCompact) + 1 utility (session_state) |
 | **Memory Layers** | 3 (Knowledge Graph + Daily Notes + Tacit Knowledge) |
 | **Commands** | 2 (`/memory-review`, `/memory-status`) |
 | **Dependencies** | 0 (pure Python stdlib) |
@@ -479,7 +479,7 @@ This project is licensed under the [MIT License](LICENSE).
 ### v1.0.0 (2026-02-27) — Initial Release
 
 - Three-layer memory architecture (Knowledge Graph + Daily Notes + Tacit Knowledge)
-- 4 lifecycle hooks (SessionStart, PostToolUse, PreCompact, State)
+- 3 lifecycle hooks (SessionStart, PostToolUse, PreCompact) + 1 utility module (session_state)
 - One-command installer for macOS/Linux/Windows
 - `/memory-review` and `/memory-status` commands
 - Complementary design with official auto-memory (v2.1.59+)
