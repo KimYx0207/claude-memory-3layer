@@ -2,7 +2,7 @@
 # ============================================================
 # Three-Layer Memory System — Installer
 # One-line install:
-#   curl -fsSL https://raw.githubusercontent.com/laojin-ai/claude-memory-3layer/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/KimYx0207/claude-memory-3layer/main/install.sh | bash
 # ============================================================
 
 set -e
@@ -75,7 +75,7 @@ else
     SOURCE_DIR=$(mktemp -d)
     echo -e "${BLUE}↓${NC} Downloading from GitHub..."
     if command -v git &>/dev/null; then
-        git clone --depth 1 https://github.com/laojin-ai/claude-memory-3layer.git "${SOURCE_DIR}" 2>/dev/null
+        git clone --depth 1 https://github.com/KimYx0207/claude-memory-3layer.git "${SOURCE_DIR}" 2>/dev/null
     else
         echo -e "${RED}✗${NC} git not found. Please install git first."
         exit 1

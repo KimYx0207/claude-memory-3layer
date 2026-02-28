@@ -12,17 +12,17 @@
 
 ```bash
 # macOS / Linux
-curl -fsSL https://raw.githubusercontent.com/laojin-ai/claude-memory-3layer/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/KimYx0207/claude-memory-3layer/main/install.sh | bash
 
 # Windows PowerShell
-irm https://raw.githubusercontent.com/laojin-ai/claude-memory-3layer/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/KimYx0207/claude-memory-3layer/main/install.ps1 | iex
 ```
 
 ### Option 2: Manual Install
 
 ```bash
 # Clone the repo
-git clone https://github.com/laojin-ai/claude-memory-3layer.git
+git clone https://github.com/KimYx0207/claude-memory-3layer.git
 cd claude-memory-3layer
 
 # Run installer
@@ -62,6 +62,17 @@ Then register hooks in `.claude/settings.json`:
           {
             "type": "command",
             "command": "python .claude/hooks/memory_loader.py"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/hooks/memory_extractor.py"
           }
         ]
       }

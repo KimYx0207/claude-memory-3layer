@@ -1,7 +1,7 @@
 # ============================================================
 # Three-Layer Memory System — Windows Installer (PowerShell)
 # One-line install:
-#   irm https://raw.githubusercontent.com/laojin-ai/claude-memory-3layer/main/install.ps1 | iex
+#   irm https://raw.githubusercontent.com/KimYx0207/claude-memory-3layer/main/install.ps1 | iex
 # ============================================================
 
 $ErrorActionPreference = "Stop"
@@ -57,7 +57,7 @@ if (Test-Path $LocalSource) {
     $SourceDir = Join-Path $env:TEMP "claude-memory-3layer"
     Write-Host "  [..] Downloading from GitHub..." -ForegroundColor Blue
     if (Test-Path $SourceDir) { Remove-Item $SourceDir -Recurse -Force }
-    git clone --depth 1 https://github.com/laojin-ai/claude-memory-3layer.git $SourceDir 2>$null
+    git clone --depth 1 https://github.com/KimYx0207/claude-memory-3layer.git $SourceDir 2>$null
     if (-not (Test-Path (Join-Path $SourceDir "hooks" "memory_loader.py"))) {
         Write-Host "  [X] Download failed. Check network." -ForegroundColor Red
         exit 1

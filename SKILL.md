@@ -49,13 +49,13 @@ A management layer that complements official auto-memory. Three specialized memo
 
 ```bash
 # One-line install (Unix/macOS)
-curl -fsSL https://raw.githubusercontent.com/laojin-ai/claude-memory-3layer/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/KimYx0207/claude-memory-3layer/main/install.sh | bash
 
 # Windows PowerShell
-irm https://raw.githubusercontent.com/laojin-ai/claude-memory-3layer/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/KimYx0207/claude-memory-3layer/main/install.ps1 | iex
 
 # Manual install
-git clone https://github.com/laojin-ai/claude-memory-3layer.git
+git clone https://github.com/KimYx0207/claude-memory-3layer.git
 cd claude-memory-3layer && ./install.sh
 ```
 

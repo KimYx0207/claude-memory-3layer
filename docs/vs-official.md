@@ -129,7 +129,7 @@ Upgrade to v2.1.59+. Done. Zero configuration.
 
 ### Three-Layer
 ```bash
-curl -fsSL https://raw.githubusercontent.com/laojin-ai/claude-memory-3layer/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/KimYx0207/claude-memory-3layer/main/install.sh | bash
 ```
 One command. But still one more step than zero.
 
