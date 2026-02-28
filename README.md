@@ -1,54 +1,119 @@
-# 🧠 Three-Layer Memory System for Claude Code
+# Three-Layer Memory System for Claude Code
 
-> Give Claude Code a real memory — structured, git-trackable, and token-efficient.
+<div align="center">
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-v2.1%2B-blueviolet)](https://docs.anthropic.com/en/docs/claude-code)
+![GitHub stars](https://img.shields.io/github/stars/KimYx0207/claude-memory-3layer?style=social)
+![GitHub forks](https://img.shields.io/github/forks/KimYx0207/claude-memory-3layer?style=social)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Claude Code](https://img.shields.io/badge/Claude_Code-v2.1%2B-blueviolet.svg)
+![Python](https://img.shields.io/badge/Python-3.8%2B-green.svg)
+![Dependencies](https://img.shields.io/badge/Dependencies-Zero-brightgreen.svg)
 
-Claude Code forgets everything between sessions. The official `CLAUDE.md` requires manual maintenance. The official auto-memory (v2.1.59+) solves **knowledge discovery** brilliantly — Claude uses AI to decide what's worth remembering.
+**Give Claude Code a real memory — structured, git-trackable, and token-efficient.**
 
-**But discovery is only half the problem.** The other half — lifecycle management, git tracking, team sharing, precise token control — is what this Skill handles.
+</div>
 
-**This is not a replacement for official auto-memory. It's the management layer that official auto-memory doesn't have.**
+> :brain: **The management layer that official auto-memory doesn't have**
+
+> :zap: One-command install | Zero dependencies | ~1500 tokens budget
+
+> :handshake: Coexists with official auto-memory (v2.1.59+) — they complement each other
+
+> :link: **GitHub**: [https://github.com/KimYx0207/claude-memory-3layer](https://github.com/KimYx0207/claude-memory-3layer)
+
+> [Chinese Version / 中文版本](README_CN.md)
 
 ---
 
-## Official Auto-Memory + Three-Layer: Better Together
+## :telephone_receiver: Contact
 
-Official auto-memory is great at **discovering** knowledge (AI-powered, zero config).
-Three-Layer Memory is great at **managing** knowledge (structured, git-trackable, lifecycle-aware).
+<div align="center">
+  <img src="images/二维码基础款.png" alt="Contact" width="600"/>
+  <p><strong>Get more AI tips and technical support</strong></p>
+  <p>
+    :globe_with_meridians: <a href="https://www.aiking.dev/">aiking.dev</a> | :bird: <a href="https://x.com/KimYx0207">@KimYx0207</a> | WeChat Official Account: <strong>老金带你玩AI</strong>
+  </p>
+</div>
 
-Use both. They coexist without conflict.
+### :coffee: Buy Me a Coffee
+
+<div align="center">
+  <p><strong>If this project helped you, consider supporting it!</strong></p>
+  <table align="center">
+    <tr>
+      <td align="center">
+        <img src="images/微信.jpg" alt="WeChat Pay" width="300"/>
+        <br/>
+        <strong>WeChat Pay</strong>
+      </td>
+      <td align="center">
+        <img src="images/支付宝.jpg" alt="Alipay" width="300"/>
+        <br/>
+        <strong>Alipay</strong>
+      </td>
+    </tr>
+  </table>
+</div>
+
+---
+
+## :book: Why This Exists
+
+Claude Code forgets everything between sessions. Anthropic provides two solutions:
+
+- **CLAUDE.md** — manual rules file, you write and maintain it
+- **Auto-memory (v2.1.59+)** — AI-powered, Claude decides what to remember
+
+Official auto-memory solves **knowledge discovery** brilliantly. But discovery is only half the problem.
+
+**The other half — lifecycle management, git tracking, team sharing, precise token control — is what this project handles.**
+
+This is not a replacement. It's the management layer that official auto-memory doesn't have. Use both together.
+
+### :dna: Official + Three-Layer: Better Together
 
 | Dimension | Official v2.1.59 | Three-Layer Memory | Best for |
 |-----------|-------------------|-------------------|----------|
 | Knowledge discovery | AI semantic understanding | Keyword matching (rules) | Official wins |
 | Install cost | Zero config | One command | Official wins |
-| Storage | Single MEMORY.md | 3 layers (JSON + MD + MD) | Three-Layer more flexible |
-| Git tracking | ❌ `~/.claude/projects/` (hidden) | ✅ `.claude/memory/` (in project) | Three-Layer only |
+| Storage format | Markdown (flat text + topic files) | 3 layers (JSON + MD + MD) | Three-Layer more flexible |
+| Git tracking | :x: `~/.claude/projects/` (hidden) | :white_check_mark: `.claude/memory/` (in project) | Three-Layer only |
 | Lifecycle | Write-only, grows forever | `status` field (active/superseded) | Three-Layer only |
-| Token control | Truncate at 200 lines (unknown tokens) | ~1500 tokens (configurable) | Three-Layer more predictable |
-| Team sharing | ❌ Local only | ✅ Via git | Three-Layer only |
-| Knowledge cleanup | ❌ None | ✅ Auto-suggest via `/memory-review` | Three-Layer only |
+| Token control | Truncate at 200 lines (unknown tokens) | ~1500 tokens per topic (configurable) | Three-Layer more predictable |
+| Team sharing | :x: Local only | :white_check_mark: Via git | Three-Layer only |
+| Knowledge cleanup | :x: None | :white_check_mark: Auto-suggest via `/memory-review` | Three-Layer only |
 
 ---
 
-## Quick Start
+## :sparkles: Core Features
+
+- :brain: **Three-Layer Architecture** — Knowledge Graph (JSON) + Daily Notes (MD) + Tacit Knowledge (MD)
+- :recycle: **Lifecycle Management** — Facts can expire (`active` → `superseded`), keeps knowledge lean
+- :git: **Git-Trackable** — All memory lives in `.claude/memory/`, commit and share with your team
+- :dart: **Token-Efficient** — ~1500 tokens per topic (<1% of 200K context), fully configurable
+- :package: **Zero Dependencies** — Pure Python stdlib, no pip install needed
+- :electric_plug: **Hook-Powered** — SessionStart / PostToolUse / PreCompact lifecycle hooks
+- :broom: **Smart Cleanup** — `/memory-review` finds outdated entries and suggests cleanup
+- :handshake: **Coexists with Official** — Works alongside auto-memory and CLAUDE.md
+
+---
+
+## :rocket: Quick Start
 
 ### One-Line Install
 
 ```bash
 # macOS / Linux
-curl -fsSL https://raw.githubusercontent.com/laojin-ai/claude-memory-3layer/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/KimYx0207/claude-memory-3layer/main/install.sh | bash
 
 # Windows PowerShell
-irm https://raw.githubusercontent.com/laojin-ai/claude-memory-3layer/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/KimYx0207/claude-memory-3layer/main/install.ps1 | iex
 ```
 
 ### Manual Install
 
 ```bash
-git clone https://github.com/laojin-ai/claude-memory-3layer.git
+git clone https://github.com/KimYx0207/claude-memory-3layer.git
 cd claude-memory-3layer
 ./install.sh   # or .\install.ps1 on Windows
 ```
@@ -59,10 +124,10 @@ cd claude-memory-3layer
 your-project/
 └── .claude/
     ├── hooks/
-    │   ├── memory_loader.py      # SessionStart hook
-    │   ├── memory_extractor.py   # PostToolUse hook
+    │   ├── memory_loader.py      # SessionStart: load 3 layers
+    │   ├── memory_extractor.py   # PostToolUse: extract knowledge
     │   ├── session_state.py      # State management
-    │   └── pre_compact.py        # PreCompact hook
+    │   └── pre_compact.py        # PreCompact: save before compression
     ├── memory/
     │   ├── MEMORY.md             # Layer 3: tacit knowledge
     │   ├── memory/               # Layer 2: daily notes
@@ -75,7 +140,28 @@ your-project/
 
 ---
 
-## How It Works
+## :gear: How It Works
+
+### Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Claude Code Session                        │
+│                                                              │
+│  SessionStart ──→ memory_loader.py ──→ Load 3 layers         │
+│       │                                    │                  │
+│       ▼                                    ▼                  │
+│  [Context injected with ~1500 tokens of memory]              │
+│                                                              │
+│  ... working ...                                             │
+│                                                              │
+│  PostToolUse ──→ memory_extractor.py ──→ Save to L1 + L2     │
+│       │                                                      │
+│  PreCompact ──→ pre_compact.py ──→ Save session state        │
+│       │                                                      │
+│  SessionEnd ──→ (state persisted for next session)           │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ### Three Layers, Three Purposes
 
@@ -92,12 +178,13 @@ your-project/
 │  │           │  │           │  │               │  │
 │  │ Last 10   │  │ Last 3    │  │ Full file     │  │
 │  │ active    │  │ days      │  │               │  │
+│  │ per topic │  │           │  │               │  │
 │  └──────────┘  └──────────┘  └──────────────┘  │
 │        │              │              │           │
 │        └──────────────┴──────────────┘           │
 │                       │                          │
-│              ~1500 tokens total                   │
-│              (<1% of 200K context)               │
+│         ~1500 tokens per topic                   │
+│         (<1% of 200K context)                    │
 └─────────────────────────────────────────────────┘
 ```
 
@@ -161,7 +248,7 @@ Hard-won experience that can't be auto-extracted.
 
 ---
 
-## Hook Registration
+## :wrench: Hook Registration
 
 The installer auto-registers hooks in `.claude/settings.json`. If you need to add them manually:
 
@@ -207,7 +294,7 @@ The installer auto-registers hooks in `.claude/settings.json`. If you need to ad
 
 ---
 
-## Commands
+## :hammer_and_wrench: Commands
 
 ### `/memory-review`
 
@@ -224,7 +311,7 @@ Show memory system statistics — item counts, date ranges, token estimates.
 
 ---
 
-## Configuration
+## :control_knobs: Configuration
 
 ### Environment Variables
 
@@ -245,7 +332,7 @@ export MEMORY_TOPICS="fastapi:backend,react:frontend,stripe:payments"
 
 ---
 
-## Lifecycle Management
+## :recycle: Lifecycle Management
 
 The key feature official auto-memory doesn't have: **knowledge can expire**.
 
@@ -270,7 +357,25 @@ Or use `/memory-review` to auto-detect and clean up outdated entries.
 
 ---
 
-## Compatibility
+## :chart_with_upwards_trend: Token Budget Analysis
+
+The system is designed to stay under ~1500 tokens at session start (single topic):
+
+| Component | Estimated Tokens |
+|-----------|-----------------|
+| Layer 3 (MEMORY.md, typical) | ~300 |
+| Layer 2 (3 days x ~3 entries) | ~400 |
+| Layer 1 (10 facts per topic x ~15 words) | ~600 |
+| Headers and formatting | ~100 |
+| **Total (single topic)** | **~1400** |
+
+Multiple topics scale linearly. Configure via `MEMORY_MAX_ITEMS` env var.
+
+This is <1% of Claude's 200K context window.
+
+---
+
+## :white_check_mark: Compatibility
 
 - **Claude Code**: v2.1.0+ (hooks support required)
 - **Python**: 3.8+ (stdlib only, zero dependencies)
@@ -279,15 +384,17 @@ Or use `/memory-review` to auto-detect and clean up outdated entries.
 
 ---
 
-## Project Structure
+## :file_folder: Project Structure
 
 ```
 claude-memory-3layer/
 ├── SKILL.md              # Claude Code Skill manifest
-├── README.md             # This file
+├── README.md             # English documentation
+├── README_CN.md          # Chinese documentation
 ├── LICENSE               # MIT
 ├── install.sh            # Unix/macOS installer
 ├── install.ps1           # Windows installer
+├── images/               # Images and QR codes
 ├── hooks/
 │   ├── memory_loader.py  # SessionStart: load 3 layers
 │   ├── memory_extractor.py # PostToolUse: extract knowledge
@@ -307,9 +414,33 @@ claude-memory-3layer/
 
 ---
 
-## Contributing
+## :bar_chart: Project Statistics
 
-Issues and PRs welcome. Please:
+| Metric | Value |
+|--------|-------|
+| **Hook Scripts** | 4 (SessionStart, PostToolUse, PreCompact, State) |
+| **Memory Layers** | 3 (Knowledge Graph + Daily Notes + Tacit Knowledge) |
+| **Commands** | 2 (`/memory-review`, `/memory-status`) |
+| **Dependencies** | 0 (pure Python stdlib) |
+| **Token Budget** | ~1500 per topic (configurable) |
+| **Python Version** | 3.8+ |
+| **Claude Code Version** | v2.1.0+ (tested on v2.1.59) |
+
+---
+
+## :busts_in_silhouette: Target Users
+
+- :white_check_mark: **Claude Code power users** — Want structured, persistent memory across sessions
+- :white_check_mark: **Team developers** — Need git-trackable, shared knowledge base
+- :white_check_mark: **Token-conscious users** — Want precise control over context window usage
+- :white_check_mark: **Multi-project developers** — Need per-project knowledge management
+- :white_check_mark: **DIY enthusiasts** — Want full control over what Claude remembers
+
+---
+
+## :handshake: Contributing
+
+Issues and PRs welcome! Please:
 
 1. Keep zero-dependency policy (Python stdlib only)
 2. Test on macOS + Windows
@@ -317,14 +448,40 @@ Issues and PRs welcome. Please:
 
 ---
 
-## License
+## :page_facing_up: License
 
-MIT — use it however you want.
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## Author
+## :pray: Acknowledgments
 
-**LaojinAI** (老金) — Building tools for Claude Code power users.
+- [Anthropic](https://www.anthropic.com/) for building Claude Code
+- The Claude Code community for feedback and ideas
+- Everyone who contributed to the official auto-memory discussion
 
-WeChat: Search "老金AI笔记" for tutorials and deep-dives.
+---
+
+## :bust_in_silhouette: Author
+
+**KimYx0207** (老金 / LaojinAI) — Building tools for Claude Code power users.
+
+<div align="center">
+  <p>
+    :globe_with_meridians: <a href="https://www.aiking.dev/">aiking.dev</a> | :bird: <a href="https://x.com/KimYx0207">@KimYx0207</a> | WeChat: <strong>老金带你玩AI</strong>
+  </p>
+</div>
+
+---
+
+## :memo: Changelog
+
+### v1.0.0 (2026-02-27) — Initial Release
+
+- Three-layer memory architecture (Knowledge Graph + Daily Notes + Tacit Knowledge)
+- 4 lifecycle hooks (SessionStart, PostToolUse, PreCompact, State)
+- One-command installer for macOS/Linux/Windows
+- `/memory-review` and `/memory-status` commands
+- Complementary design with official auto-memory (v2.1.59+)
+- Zero dependencies (pure Python stdlib)
+- Full documentation (quickstart, architecture, comparison)
