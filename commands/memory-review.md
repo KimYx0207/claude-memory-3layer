@@ -8,6 +8,8 @@ version: 1.0.0
 
 Review the three-layer memory system, find recurring patterns, and suggest promoting them to permanent rules in CLAUDE.md.
 
+**Language**: Auto-detect the user's input language and output the entire report in that same language. If the user speaks Chinese, output in Chinese. If English, output in English.
+
 ## Steps
 
 ### Step 1: Scan All Three Layers

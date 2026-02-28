@@ -8,6 +8,8 @@ version: 1.0.0
 
 Show current memory system status and statistics.
 
+**Language**: Auto-detect the user's input language and output the entire report in that same language. If the user speaks Chinese, output in Chinese. If English, output in English.
+
 ## Steps
 
 ### Step 1: Check Directory Structure
