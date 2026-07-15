@@ -13,6 +13,8 @@
 
 </div>
 
+> This repository has been merged into [Kim Service](https://github.com/KimYx0207/Kim_Service) and no longer publishes standalone releases. Please use Kim Service for new versions, installation instructions, and release notes.
+
 > :brain: **The management layer that official auto-memory doesn't have**
 
 > :zap: One-command install | Zero dependencies | ~1500 tokens budget
