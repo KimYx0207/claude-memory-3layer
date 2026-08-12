@@ -2,12 +2,12 @@
 
 <div align="center">
 
-![GitHub stars](https://img.shields.io/github/stars/KimYx0207/claude-memory-3layer?style=social)
-![GitHub forks](https://img.shields.io/github/forks/KimYx0207/claude-memory-3layer?style=social)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Claude Code](https://img.shields.io/badge/Claude_Code-v2.1%2B-blueviolet.svg)
-![Python](https://img.shields.io/badge/Python-3.8%2B-green.svg)
-![Dependencies](https://img.shields.io/badge/Dependencies-Zero-brightgreen.svg)
+[![GitHub stars](https://img.shields.io/github/stars/KimYx0207/claude-memory-3layer?style=social)](https://github.com/KimYx0207/claude-memory-3layer)
+[![GitHub forks](https://img.shields.io/github/forks/KimYx0207/claude-memory-3layer?style=social)](https://github.com/KimYx0207/claude-memory-3layer)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/KimYx0207/claude-memory-3layer)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-v2.1%2B-blueviolet.svg)](https://github.com/KimYx0207/claude-memory-3layer)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-green.svg)](https://github.com/KimYx0207/claude-memory-3layer)
+[![Dependencies](https://img.shields.io/badge/Dependencies-Zero-brightgreen.svg)](https://github.com/KimYx0207/claude-memory-3layer)
 
 **Give Claude Code a real memory — structured, git-trackable, and token-efficient.**
 
